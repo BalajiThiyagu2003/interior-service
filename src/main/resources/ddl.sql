@@ -42,11 +42,12 @@ CREATE TABLE interiorservice.project_images (
     FOREIGN KEY (project_id) REFERENCES interiorservice.projects(id) ON DELETE CASCADE
 );
 
-CREATE TABLE interiorservice.contact_requests (
+CREATE TABLE contacts (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
+    full_name VARCHAR(100) NOT NULL,
+    phone_number VARCHAR(15) NOT NULL,
     email VARCHAR(100) NOT NULL,
-    phone VARCHAR(20),
-    message TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    message TEXT NOT NULL,
+    submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
