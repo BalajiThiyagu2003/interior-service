@@ -54,3 +54,7 @@ INSERT INTO interiorservice.project_images (project_id, image_url, uploaded_at) 
 
 (6, 'https://media.designcafe.com/wp-content/uploads/2020/01/21003949/dining-room-design-for-your-home.jpg', NOW()),
 (6, 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/d2/50/92/5-bhk-luxury-villa-anjuna.jpg?w=700&h=-1&s=1', NOW());
+
+
+
+update interiorservice.users set is_admin = true where email = 'balaji@gmail.com'

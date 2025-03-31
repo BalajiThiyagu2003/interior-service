@@ -6,15 +6,6 @@ CREATE TABLE users (
 );
 
 
-
-CREATE TABLE interiorservice.admin_users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
 CREATE TABLE interiorservice.categories (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) UNIQUE NOT NULL,
@@ -42,7 +33,7 @@ CREATE TABLE interiorservice.project_images (
     FOREIGN KEY (project_id) REFERENCES interiorservice.projects(id) ON DELETE CASCADE
 );
 
-CREATE TABLE contacts (
+CREATE TABLE interiorservice.contacts (
     id INT AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,
     phone_number VARCHAR(15) NOT NULL,
@@ -51,3 +42,5 @@ CREATE TABLE contacts (
     submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+
+ALTER TABLE interiorservice.users ADD COLUMN is_admin BOOLEAN NOT NULL DEFAULT FALSE;

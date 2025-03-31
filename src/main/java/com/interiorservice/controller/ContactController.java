@@ -2,8 +2,9 @@ package com.interiorservice.controller;
 
 import com.interiorservice.model.Contact;
 import com.interiorservice.service.ContactService;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/contacts")
@@ -15,9 +16,13 @@ public class ContactController {
         this.contactService = contactService;
     }
 
+    @GetMapping
+    public List<Contact> getAllContacts() {
+        return contactService.getAllContacts();
+    }
+
     @PostMapping
-    public ResponseEntity<Contact> submitContact(@RequestBody Contact contact) {
-        Contact savedContact = contactService.saveContact(contact);
-        return ResponseEntity.ok(savedContact);
+    public Contact saveContact(@RequestBody Contact contact) {
+        return contactService.saveContact(contact);
     }
 }
