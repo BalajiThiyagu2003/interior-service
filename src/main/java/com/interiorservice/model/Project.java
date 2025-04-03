@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "projects1")
+@Table(name = "projects")
 public class Project {
 
     @Id
@@ -90,8 +90,5 @@ public class Project {
         return updatedAt;
     }
 
-	public void setProject(Project savedProject) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }

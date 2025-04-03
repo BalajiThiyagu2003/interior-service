@@ -1,5 +1,5 @@
 use interiorservice;
-INSERT INTO categories (name, description, image_url) VALUES
+INSERT INTO interiorservice.categories (name, description, image_url) VALUES
 ('Modular Kitchen', 'Modern modular kitchen designs with storage solutions.', '/images/img19.jpg'),
 ('Bedroom', 'Comfortable bedroom interiors with customized furniture.', '/images/img8.jpg'),
 ('Living Room', 'Elegant and cozy living room setups.', '/images/img9.jpg'),
